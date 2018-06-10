@@ -1,0 +1,15 @@
+.item-sec{
+    display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	border: 1px solid $primary;
+	
+
+	&__item{
+	width: 300px;
+	margin: 10px auto;
+	border: 1px solid $border;
+	}
+
+}
+

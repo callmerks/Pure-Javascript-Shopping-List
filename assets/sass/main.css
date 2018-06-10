@@ -1,3 +1,14 @@
+.item-sec {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  border: 1px solid #eee; }
+  .item-sec__item {
+    width: 300px;
+    margin: 10px auto;
+    border: 1px solid #e6e6e6; }
 
+.checkout {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
