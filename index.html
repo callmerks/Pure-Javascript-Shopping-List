@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SHOPPING CART</title>
     <link rel="stylesheet" type="text/css" href="./assets/sass/main.css">
+    
 
     <!-----------------------------ADDITIONAL LINKS AND RESOURCES------------------------->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script type="text/javascript" src="assets/js/default.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!---------------------------------------F O N T S------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
@@ -29,7 +30,132 @@
     
 </head>
 <body>
-    
+<!------------------------------------SHOPPING CART-------------------------------->
+<div class="checkout">
+  <span class="items"></span>
+  <span class="total"></span>
+  <span class="btn btn-primary">Checkout</span>
+</div>
+
+<!---------------------------------LIST ITEMS SECTION-----------------------------> 
+<div class="container">  
+<h1>Shoes Brand</h1>
+<section class="item-sec container">
+    <div class="item-sec__item">
+        <h3>Woodland</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Woodland" data-price="1699" data-id=1 data-size=9>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Bata</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Bata" data-price="967" data-id=2 data-size=11>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Skechers</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Skechers" data-price="1299" data-id=3 data-size=7>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Nike</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Nike" data-price="1899" data-id=4 data-size= 10>
+           Add to cart 
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Puma</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Puma" data-price="1449" data-id=5 data-size=11>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Neon</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Neon" data-price="569" data-id=6 data-size=10>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Adidas</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Adidas" data-price="1999" data-id=7 data-size=9>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Timberland</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Timberland" data-price="1739" data-id=8 data-size=10>
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    <div class="item-sec__item">
+        <h3>Blues</h3>
+        <img class="img-fluid" src="http://via.placeholder.com/350x150">
+        <div>
+           <p>first image</p>
+           <a href="#" class="productItem" 
+           data-name="Blues" data-price="869" data-id=9 data-size="8">
+           Add to cart
+           </a>
+        </div>
+    </div>
+
+    </section>
+</div>
+
+<!------------------------------------DISPLAY ITEMS INFORMATION-------------------->
+<div id="displayItemInfo">
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
