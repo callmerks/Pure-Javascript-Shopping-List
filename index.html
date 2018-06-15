@@ -13,7 +13,6 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/default.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!---------------------------------------F O N T S------------------------------------->
@@ -30,132 +29,145 @@
     
 </head>
 <body>
-<!------------------------------------SHOPPING CART-------------------------------->
-<div class="checkout">
-  <span class="items"></span>
-  <span class="total"></span>
-  <span class="btn btn-primary">Checkout</span>
-</div>
-
-<!---------------------------------LIST ITEMS SECTION-----------------------------> 
-<div class="container">  
-<h1>Shoes Brand</h1>
-<section class="item-sec container">
-    <div class="item-sec__item">
-        <h3>Woodland</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Woodland" data-price="1699" data-id=1 data-size=9>
-           Add to cart
-           </a>
+<!--------------DELETE ALL SESSIONS AND ITEMS DIV---------->
+    <div class="deleteSessionDiv">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 text-right">
+            <p>Reset or Delete all items and add new items into shopping cart</p>
+          </div>
+          <div class="col-sm-12 col-md-2 text-right">
+            <button class="removeAllItems">EMPTY CART</button>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div class="item-sec__item">
-        <h3>Bata</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Bata" data-price="967" data-id=2 data-size=11>
-           Add to cart
-           </a>
+    <!--------------DELETE ITEMS END HERE ------------------->
+    <!---------------DISPLAY INFO ----------------------->
+    <div class="cart">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 text-right">
+            <span class="finalItemsQty"></span>
+            <span class="finalTotal"></span>
+          </div>
+          <div class="col-xs-12 col-md-2 text-right">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#shoppingCart">
+            Shopping Cart
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div class="item-sec__item">
-        <h3>Skechers</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Skechers" data-price="1299" data-id=3 data-size=7>
-           Add to cart
-           </a>
+    <!-----------------DISPLAY INFO ENDS HERE---------------------->
+    <!------------------MAIN NAVIGATION------------------------------>
+    <nav class="navbar navbar-expand-sm navbar-light py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-sm-none" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded btn btn-primary btn-xs" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="store.html">Store</a>
+            </li>
+          </ul>
         </div>
-    </div>
-
-    <div class="item-sec__item">
-        <h3>Nike</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Nike" data-price="1899" data-id=4 data-size= 10>
-           Add to cart 
-           </a>
+      </div>
+    </nav>
+    <!-----------------------PRODUCT ITEMS------------------------------->
+    
+    <div class="container">
+      <h3 class="text-uppercase">Brands in focus</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="productItem btn btn-primary" data-id="1" data-name="Bata" data-price="569">Add To Cart</a>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <div class="item-sec__item">
-        <h3>Puma</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Puma" data-price="1449" data-id=5 data-size=11>
-           Add to cart
-           </a>
+        <div class="col-sm-12 col-md-3">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="productItem btn btn-primary" data-id="2" data-name="Woodland" data-price="1299">Add To Cart</a>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <div class="item-sec__item">
-        <h3>Neon</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Neon" data-price="569" data-id=6 data-size=10>
-           Add to cart
-           </a>
+        <div class="col-sm-12 col-md-3">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Reebok</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="productItem btn btn-primary" data-id="3" data-name="Reebok" data-price="399">Add To Cart</a>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <div class="item-sec__item">
-        <h3>Adidas</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Adidas" data-price="1999" data-id=7 data-size=9>
-           Add to cart
-           </a>
+        <div class="col-sm-12 col-md-3">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="productItem btn btn-primary" data-id="4" data-name="Nike" data-price="999">Add To Cart</a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div class="item-sec__item">
-        <h3>Timberland</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Timberland" data-price="1739" data-id=8 data-size=10>
-           Add to cart
-           </a>
+    <!-----------------------------PRODUCT ITEMS END HERE---------------------->
+    <!---------------------------MODAL FOR SHOPPING CART------------------------->
+    <div class="modal fade" id="shoppingCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Sub Total</th>
+                </tr>
+              </thead>
+              <tbody class="displayItem">
+                <!--DYNAMIC JQUERY ITEM INFORMATIONS IN TABLE -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+            <a href="checkout.html" class="btn btn-primary">checkout</a>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div class="item-sec__item">
-        <h3>Blues</h3>
-        <img class="img-fluid" src="http://via.placeholder.com/350x150">
-        <div>
-           <p>first image</p>
-           <a href="#" class="productItem" 
-           data-name="Blues" data-price="869" data-id=9 data-size="8">
-           Add to cart
-           </a>
-        </div>
-    </div>
-
-    </section>
-</div>
-
-<!------------------------------------DISPLAY ITEMS INFORMATION-------------------->
-<div id="displayItemInfo">
-</div>
-
+    <!------------------MODAL FOR SHOPPING CART ENDS HERE----------------->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

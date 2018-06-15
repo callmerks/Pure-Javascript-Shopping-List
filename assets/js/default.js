@@ -1,58 +1,64 @@
-var shoppingCart = [];
-$(document).ready(function(){
-    outputItems();
-
-    $('.productItem').click(function(e){
-        e.preventDefault();
-    var itemInfo = $(this.dataset)[0];
-    itemInfo.qty= 1;
-    itemincart = false;
-
-    $.each(shoppingCart, function(index, value){
-        if(value.id==itemInfo.id){
-            parseInt(value.qty++);
-            itemincart = true;
-        }
-    })
-        if(!itemincart){
-            shoppingCart.push(itemInfo);
-        }
-
-        sessionStorage["shoppingCart"] = JSON.stringify(shoppingCart);
-        outputItems();
-
-    })
-
-
-    function outputItems(){
-        if(sessionStorage["shoppingCart"]!=null){
-            shoppingCart = JSON.parse(sessionStorage["shoppingCart"].toString());
-            //console.log(sessionStorage["shoppingCart"]);
-            $('.checkout').show();
-        }
-        // INITIAL VALUES
-        var displayItemsInfo = '';
-        var total = 0;
-        var items = 0;
-
-        $.each(shoppingCart, function(index, value){
-        displayItemsInfo += `<div>Name: ${value.name}, Price(DKK): ${value.price}, Qty: ${value.qty}, 
-        Size: ${value.size}</div> `;
-        total += value.qty * value.price;
-        items += value.qty
-
-        })
-
-        // CONTAINED VALUES
-        displayItemsInfo += '<div>'+currency(total)+'</div>';
-        $('#displayItemInfo').html(displayItemsInfo);
-        $('.total').html(`Total Amount: ${currency(total)}`);
-        $('.items').html(`Total Items: ${items}`);
-
-        function currency(dk){
-        return `DKK - ${(dk/1)}`;
-        }
-
-     }
-
-  })
+// DELETE ALL ITEMS FROM AN ARRAY
+                $(document).on('click', '.removeAllItems', function(){
+                    sessionStorage.removeItem("scart")
+                    location.reload();
+                })
+        
+        // Shopping Cart Array
+            var shopCartArray = [];
+        
+            $(document).ready(function(){
+        // add object into arrays
+                $('.productItem').click(function(){
+                    var itemInfo = $(this.dataset)[0];
+                    itemInfo.qty = 1;
+                    itemincart = false;
+                    
+                    $.each(shopCartArray, function(i, val){
+                        if(val.id==itemInfo.id){
+                            parseInt(val.qty++);
+                            itemincart = true;
+                        }
+                    })
+                    if(!itemincart){
+                        shopCartArray.push(itemInfo);
+                    }
+                    sessionStorage["scart"] = JSON.stringify(shopCartArray);
+                    outputInfo();
+                    })
+                function outputInfo(){
+                    if(sessionStorage["scart"]!=null){
+                        shopCartArray = JSON.parse(sessionStorage["scart"].toString());
+                        console.log(sessionStorage["scart"]);
+                    }
+                    // NULL OR DEFAULT VALUES
+                    var qty = 0;
+                    var subTotal = 0;
+                    var total = 0;
+                    var disItemInHtml = '';
+                    // LOOPING HERE
+                    $.each(shopCartArray, function(i, val){
+                    //console.log(val)
+                    // OUTPUT DEFAULT VALUES TO DYNAMIC
+                    qty += parseInt(val.qty);
+                    subTotal = val.qty*val.price;
+                    total += subTotal;
+                    disItemInHtml += `<tr>
+                            <td>${val.name}</td>
+                            <td>${val.price}</td>
+                            <td>${val.qty}</td>
+                            <td>${currency(subTotal)}</td>
+                            </tr>`;
+                        })
+                        // DISPLAY DYNAMIC VALUES
+                        disItemInHtml += `<tr><td colspan="3" class="text-right">Total Price: </td><td>${currency(total)}</td></tr>`
+                        $('.finalItemsQty').html(`Total Items: ${qty}`);
+                        $('.finalTotal').html(`Total Price: ${currency(total)}`);
+                        $('.displayItem').html(disItemInHtml);
+                    }
+                    outputInfo();
+                        function currency(n){
+                        return `DKK: ${(n/1).toFixed(2)}`;
+                        }
+                    
+                    })
