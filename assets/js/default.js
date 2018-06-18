@@ -45,20 +45,26 @@
                     total += subTotal;
                     disItemInHtml += `<tr>
                             <td>${val.name}</td>
-                            <td>${val.price}</td>
                             <td>${val.qty}</td>
                             <td>${currency(subTotal)}</td>
+                            <td class="btn btn-danger btn-lg btn-block text-white removeShopCartArray">Remove</td>
                             </tr>`;
                         })
                         // DISPLAY DYNAMIC VALUES
-                        disItemInHtml += `<tr><td colspan="3" class="text-right">Total Price: </td><td>${currency(total)}</td></tr>`
-                        $('.finalItemsQty').html(`Total Items: ${qty}`);
-                        $('.finalTotal').html(`Total Price: ${currency(total)}`);
+                        disItemInHtml += `<tr><td colspan="3">Total Price: </td><td class="bg-dark text-white">(${currency(total)})</td></tr>`
+                        $('.finalItemsQty').html(`<div class="text--sm">Qty: <b class="pl-3 pr-3 pt-1 pb-1 text-white rounded-circle bg--orange">${qty}</b></div>`);
+                        $('.finalTotal').html(`<div class="text--sm">Total: <b class="pl-3 pr-3 pt-1 pb-1 text-white rounded bg--orange">${currency(total)}</b></div>`);
                         $('.displayItem').html(disItemInHtml);
                     }
                     outputInfo();
                         function currency(n){
                         return `DKK: ${(n/1).toFixed(2)}`;
                         }
+                        // REMOVE PARTICULAR ITEM
+                        $('.displayItem').on('click', '.removeShopCartArray', function(){
+                            shopCartArray.splice($(this),1)
+                            sessionStorage["scart"] = JSON.stringify(shopCartArray);
+                            outputInfo();
+                        })
                     
                     })
