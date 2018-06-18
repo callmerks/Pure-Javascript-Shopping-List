@@ -1,15 +1,8 @@
-.item-sec{
-    display: flex;
-	flex-wrap: wrap;
-	padding: 10px;
-	border: 1px solid $primary;
+.card{
+	font-size: $sm-size;
 	
-
-	&__item{
-	width: 300px;
-	margin: 10px auto;
-	border: 1px solid $border;
+	&--para{
+    height: 4rem;
+    overflow: hidden;
 	}
-
 }
-
